@@ -14,6 +14,10 @@ public class Queue {
 		list.append(node);
 	}
 
+	public INode dequeue() {
+		return list.pop();
+	}
+
 	public int getSize() {
 		return list.size();
 	}

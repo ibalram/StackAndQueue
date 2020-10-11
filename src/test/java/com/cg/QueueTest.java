@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 public class QueueTest {
 	@Test
-	public void given3NumbersWhenPushedtoStackShouldBeAddedToTop() {
+	public void given3NumbersWhenEnqueueShouldBeAddedToLast() {
 		Node<Integer> firstNode = new Node<>(50);
 		Node<Integer> secondNode = new Node<>(100);
 		Node<Integer> thirdNode = new Node<>(120);
@@ -20,5 +20,18 @@ public class QueueTest {
 		queue.enqueue(secondNode);
 		queue.enqueue(firstNode);
 		assertEquals("120->100->50", queue.toString());
+	}
+
+	@Test
+	public void given3NumbersWhenDequeueFirstAddedNode() {
+		Node<Integer> firstNode = new Node<>(50);
+		Node<Integer> secondNode = new Node<>(100);
+		Node<Integer> thirdNode = new Node<>(120);
+		Queue queue = new Queue();
+		queue.enqueue(firstNode);
+		queue.enqueue(secondNode);
+		queue.enqueue(thirdNode);
+		Node poppedNode = (Node) queue.dequeue();
+		assertEquals(firstNode, poppedNode);
 	}
 }
