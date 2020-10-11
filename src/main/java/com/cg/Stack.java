@@ -13,7 +13,19 @@ public class Stack {
 	public void push(INode node) {
 		list.add(node);
 	}
-	
+
+	public INode pop() {
+		return list.pop();
+	}
+
+	public INode peek() {
+		return list.getHead();
+	}
+
+	public int getSize() {
+		return list.size();
+	}
+
 	public String toString() {
 		return list.toString();
 	}

@@ -21,4 +21,30 @@ public class StackTest {
 		stack.push(firstNode);
 		assertEquals("50->100->120", stack.toString());
 	}
+
+	@Test
+	public void given3NumbersPeekNodeStackShouldBeLastAddedNode() {
+		Node<Integer> firstNode = new Node<>(50);
+		Node<Integer> secondNode = new Node<>(100);
+		Node<Integer> thirdNode = new Node<>(120);
+		Stack stack = new Stack();
+		stack.push(firstNode);
+		stack.push(secondNode);
+		stack.push(thirdNode);
+		Node peek = (Node) stack.peek();
+		assertEquals(thirdNode, peek);
+	}
+
+	@Test
+	public void given3NumbersWhenPoppedShouldBeLastAddedNode() {
+		Node<Integer> firstNode = new Node<>(50);
+		Node<Integer> secondNode = new Node<>(100);
+		Node<Integer> thirdNode = new Node<>(120);
+		Stack stack = new Stack();
+		stack.push(firstNode);
+		stack.push(secondNode);
+		stack.push(thirdNode);
+		Node poppedNode = (Node) stack.pop();
+		assertEquals(thirdNode, poppedNode);
+	}
 }
