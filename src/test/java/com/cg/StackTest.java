@@ -10,5 +10,15 @@ import com.cg.Stack;
 import static org.junit.Assert.*;
 
 public class StackTest {
-	
+	@Test
+	public void given3NumbersWhenPushedtoStackShouldBeAddedToTop() {
+		Node<Integer> firstNode = new Node<>(50);
+		Node<Integer> secondNode = new Node<>(100);
+		Node<Integer> thirdNode = new Node<>(120);
+		Stack stack = new Stack();
+		stack.push(thirdNode);
+		stack.push(secondNode);
+		stack.push(firstNode);
+		assertEquals("50->100->120", stack.toString());
+	}
 }

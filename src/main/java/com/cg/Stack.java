@@ -5,8 +5,16 @@ package com.cg;
 
 public class Stack {
 	private LinkedList list;
-	
+
 	public Stack() {
 		list = new LinkedList();
+	}
+
+	public void push(INode node) {
+		list.add(node);
+	}
+	
+	public String toString() {
+		return list.toString();
 	}
 }
